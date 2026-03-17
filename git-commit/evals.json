@@ -1,0 +1,33 @@
+{
+  "skill_name": "git-commit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我刚刚给用户登录接口加了 JWT token 验证，现在 POST /api/login 会返回一个 24 小时有效的 token，后续请求都要带这个 token 才能访问。帮我生成 commit message。",
+      "expected_output": "使用 feat 类型的 Conventional Commits 格式 commit 消息，包含 JWT/token/authentication 相关描述，header 不超过 72 字符",
+      "expectations": [
+        "使用 feat 类型",
+        "包含功能描述（JWT、token 或 authentication 相关词汇）",
+        "第一行不超过 72 字符"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "我修复了一个 bug：当购物车为空的时候点结算按钮会报错 'Cannot read property length of undefined'，现在加了判断，空购物车会显示提示'请先添加商品'。帮我写 commit。",
+      "expected_output": "使用 fix 类型的 commit 消息，描述空购物车问题的修复",
+      "expectations": [
+        "使用 fix 类型",
+        "描述了修复的问题（购物车、cart、空状态相关内容）"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "我把 UserCard、PostList、EventCalendar 三个组件里重复的日期格式化代码提取到了 src/utils/formatDate.js，现在这三个组件都 import 这个工具函数，逻辑完全一样只是放在一起了。",
+      "expected_output": "使用 refactor 类型的 commit 消息，体现减少代码重复的目的",
+      "expectations": [
+        "使用 refactor 类型",
+        "提到减少重复（extract、提取、duplicate、重复或 utility 相关词汇）"
+      ]
+    }
+  ]
+}
